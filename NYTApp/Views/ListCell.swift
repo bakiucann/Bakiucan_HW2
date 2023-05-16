@@ -20,22 +20,34 @@ class ListCell: UITableViewCell {
         return imageView
     }()
 
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+  private let titleLabel: UILabel = {
+      let label = UILabel()
+      label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+      label.textColor = UIColor.black
+      label.numberOfLines = 0
+      label.translatesAutoresizingMaskIntoConstraints = false
+      return label
+  }()
 
-    private let authorLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = .systemGray
-        label.numberOfLines = 1
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+  private let authorLabel: UILabel = {
+      let label = UILabel()
+      label.font = UIFont.systemFont(ofSize: 14, weight: .light)
+      label.textColor = UIColor.gray
+      label.numberOfLines = 1
+      label.translatesAutoresizingMaskIntoConstraints = false
+      return label
+  }()
+  private let contentContainer: UIView = {
+          let view = UIView()
+          view.backgroundColor = .white
+          view.layer.cornerRadius = 6
+          view.layer.shadowColor = UIColor.black.cgColor
+          view.layer.shadowOffset = CGSize(width: 0, height: 2)
+          view.layer.shadowOpacity = 0.2
+          view.layer.shadowRadius = 4
+          view.translatesAutoresizingMaskIntoConstraints = false
+          return view
+      }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -11,6 +11,21 @@ class DetailView: UIView {
 
     private let viewModel: DetailViewModel
 
+
+  private let scrollView: UIScrollView = {
+          let scrollView = UIScrollView()
+          scrollView.translatesAutoresizingMaskIntoConstraints = false
+          return scrollView
+      }()
+
+      private let stackView: UIStackView = {
+          let stackView = UIStackView()
+          stackView.axis = .vertical
+          stackView.spacing = 20
+          stackView.translatesAutoresizingMaskIntoConstraints = false
+          return stackView
+      }()
+
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -44,12 +59,17 @@ class DetailView: UIView {
         return label
     }()
 
-    let seeMoreButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("See more", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+  let seeMoreButton: UIButton = {
+      let button = UIButton(type: .system)
+      button.setTitle("See more", for: .normal)
+      button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+      button.setTitleColor(.white, for: .normal)
+      button.backgroundColor = .black
+      button.layer.cornerRadius = 10
+      button.translatesAutoresizingMaskIntoConstraints = false
+      return button
+  }()
+
 
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
@@ -63,37 +83,32 @@ class DetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupViews() {
-        addSubview(imageView)
-        addSubview(titleLabel)
-        addSubview(authorLabel)
-        addSubview(descriptionLabel)
-        addSubview(seeMoreButton)
+  private func setupViews() {
+         addSubview(scrollView)
+         scrollView.addSubview(stackView)
 
-        NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            imageView.heightAnchor.constraint(equalToConstant: 200),
+         stackView.addArrangedSubview(imageView)
+         stackView.addArrangedSubview(titleLabel)
+         stackView.addArrangedSubview(authorLabel)
+         stackView.addArrangedSubview(descriptionLabel)
+         stackView.addArrangedSubview(seeMoreButton)
 
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+         NSLayoutConstraint.activate([
+             scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+             scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
 
-            authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
-            authorLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            authorLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20),
+             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -30),
 
-            descriptionLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 20),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-
-            seeMoreButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
-            seeMoreButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            seeMoreButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            seeMoreButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
-        ])
-    }
+             imageView.heightAnchor.constraint(equalToConstant: 250),
+             seeMoreButton.heightAnchor.constraint(equalToConstant: 50)
+         ])
+     }
 
     private func configure(with viewModel: DetailViewModel) {
         imageView.setImage(from: viewModel.largeImageURL)

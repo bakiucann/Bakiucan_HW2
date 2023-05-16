@@ -11,6 +11,7 @@ import NYTimesAPI
 class ListViewController: UIViewController {
     private let listView = ListView()
     private let viewModel = ListViewModel()
+    private var activityIndicator: UIActivityIndicatorView?
 
     override func loadView() {
         view = listView
@@ -21,6 +22,7 @@ class ListViewController: UIViewController {
         setupNavigationBar()
         listView.tableView.dataSource = self
         listView.tableView.delegate = self
+        setupActivityIndicator()
         fetchData()
     }
 
@@ -29,7 +31,15 @@ class ListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
+    private func setupActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator?.center = view.center
+        activityIndicator?.hidesWhenStopped = true
+        view.addSubview(activityIndicator!)
+    }
+
     private func fetchData() {
+        activityIndicator?.startAnimating()
         viewModel.fetchTopStories { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -38,6 +48,7 @@ class ListViewController: UIViewController {
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
+                self?.activityIndicator?.stopAnimating()
             }
         }
     }

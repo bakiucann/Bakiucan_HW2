@@ -9,9 +9,29 @@ import UIKit
 import SDWebImage
 
 extension UIImageView {
+    private static let activityIndicatorKey = "activityIndicator"
 
-    func setImage(from url: URL?) {
-        self.sd_setImage(with: url, placeholderImage: nil, options: .highPriority, completed: nil)
+    var activityIndicator: UIActivityIndicatorView {
+        if let activityIndicator = objc_getAssociatedObject(self, UIImageView.activityIndicatorKey) as? UIActivityIndicatorView {
+            return activityIndicator
+        } else {
+            let activityIndicator = UIActivityIndicatorView(style: .medium)
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(activityIndicator)
+            NSLayoutConstraint.activate([
+                activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+                activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
+            ])
+            objc_setAssociatedObject(self, UIImageView.activityIndicatorKey, activityIndicator, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            return activityIndicator
+        }
     }
-}
 
+  func setImage(from url: URL?) {
+          self.sd_imageIndicator = SDWebImageActivityIndicator.gray
+          self.sd_setImage(with: url, placeholderImage: nil, options: .highPriority) { [weak self] (image, error, cacheType, imageURL) in
+              self?.sd_imageIndicator = nil
+          }
+      }
+  }
