@@ -25,6 +25,7 @@
 		2D10A9662A0DB6D5008EFC21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D10A9652A0DB6D5008EFC21 /* SceneDelegate.swift */; };
 		2D10A9682A0DB708008EFC21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D10A9672A0DB708008EFC21 /* AppDelegate.swift */; };
 		2D10A96B2A0DCA00008EFC21 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2D10A96A2A0DCA00008EFC21 /* SDWebImage */; };
+		2D10A9772A145C02008EFC21 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D10A9762A145C02008EFC21 /* UserDefaults+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		2D10A9632A0DB6D0008EFC21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D10A9652A0DB6D5008EFC21 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2D10A9672A0DB708008EFC21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2D10A9762A145C02008EFC21 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				2D10A9572A0D31B7008EFC21 /* UIImageView+Extensions.swift */,
+				2D10A9762A145C02008EFC21 /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				2D10A9582A0D31B7008EFC21 /* UIImageView+Extensions.swift in Sources */,
 				2D10A94D2A0D3179008EFC21 /* ListViewModel.swift in Sources */,
 				2D10A9452A0D3158008EFC21 /* DetailViewController.swift in Sources */,
+				2D10A9772A145C02008EFC21 /* UserDefaults+Extensions.swift in Sources */,
 				2D10A9152A0D11FC008EFC21 /* NYTApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
