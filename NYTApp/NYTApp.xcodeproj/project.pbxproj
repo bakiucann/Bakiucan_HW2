@@ -122,12 +122,12 @@
 		2D10A9092A0D11FC008EFC21 /* NYTApp */ = {
 			isa = PBXGroup;
 			children = (
-				2D10A9712A1284C6008EFC21 /* Utils */,
-				2D10A96C2A0E6C03008EFC21 /* Sources */,
+				2D10A93E2A0D125C008EFC21 /* Controllers */,
 				2D10A9432A0D3145008EFC21 /* Extensions */,
+				2D10A9712A1284C6008EFC21 /* Utils */,
 				2D10A93F2A0D127A008EFC21 /* Views */,
 				2D10A9402A0D3134008EFC21 /* ViewModels */,
-				2D10A93E2A0D125C008EFC21 /* Controllers */,
+				2D10A96C2A0E6C03008EFC21 /* Sources */,
 			);
 			path = NYTApp;
 			sourceTree = "<group>";

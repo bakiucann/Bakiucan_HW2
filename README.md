@@ -53,7 +53,6 @@ The project follows the following folder and file structure:
     - FavoriteStory+CoreDataClass.swift
     - FavoriteStory+CoreDataProperties.swift
 - NYTApp
-    - 
     - Controllers
         - ListViewController.swift
         - DetailViewController.swift
@@ -61,18 +60,20 @@ The project follows the following folder and file structure:
         - UIImageView+Extensions.swift
     - Utils
         - FavoriteManager.swift
+        - FavoriteStory.xcdatamodeld
     - Views
         - ListView.swift
         - ListCell.swift
         - DetailView.swift
+        - Launchscreen.storyboard
     - ViewModels
         - ListViewModel.swift
         - DetailViewModel.swift
-    - AppDelegate.swift
-    - Info.plist
-    - Assets.xcassets
-    - LaunchScreen.storyboard
-    - Main.storyboard
+    - Sources
+        - SceneDelegate.swift
+        - AppDelegate.swift
+        - Info.plist
+        - Assets.xcassets
 - NYTAppTests
     - NYTAppTests.swift
 - NYTAppUITests
