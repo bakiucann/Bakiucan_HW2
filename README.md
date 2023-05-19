@@ -49,14 +49,16 @@ The app implementation will be awarded bonus points for the following:
 The project follows the following folder and file structure:
 
 ```
-- NewYorkTimesApp
+- Models
+    - FavoriteStory+CoreDataClass.swift
+    - FavoriteStory+CoreDataProperties.swift
+- NYTApp
+    - 
     - Controllers
         - ListViewController.swift
         - DetailViewController.swift
     - Extensions
         - UIImageView+Extensions.swift
-    - Models
-        - Story.swift
     - Utils
         - FavoriteManager.swift
     - Views
@@ -71,20 +73,35 @@ The project follows the following folder and file structure:
     - Assets.xcassets
     - LaunchScreen.storyboard
     - Main.storyboard
+- NYTAppTests
+    - NYTAppTests.swift
+- NYTAppUITests
+    - NYTAppUITests.swift
+    - NYTAppUITestsLaunchTests.swift
+- Products
+- Frameworks
 ```
 
 Additionally, the project includes the "NYTimesAPI" package, which contains the following folder and file structure:
 
 ```
 - NYTimesAPI
+    - README.md
+    - Package.swift
     - Sources
-        - DTOs
-            - NYTimes.swift
-        - Services
-            - Decoders.swift
-            - NYTimesService.swift
-        - Responses
-            - TopStoriesResponse.swift
+        - NYTimesAPI
+            - DTOs
+                - NYTimes.swift
+            - Helper
+                - Decoders.swift
+            - Responses
+                - TopStoriesResponse.swift
+            - Services
+                - NYTimesService.swift
+            - NYTimesAPI.swift
+    - Tests
+        - NYTimesAPITests
+            - NYTimesAPITests.swift
 ```
 
 ## Implementation Details

@@ -128,8 +128,6 @@
 				2D10A93F2A0D127A008EFC21 /* Views */,
 				2D10A9402A0D3134008EFC21 /* ViewModels */,
 				2D10A93E2A0D125C008EFC21 /* Controllers */,
-				2D10A91B2A0D11FD008EFC21 /* Info.plist */,
-				2D10A9132A0D11FC008EFC21 /* FavoriteStory.xcdatamodeld */,
 			);
 			path = NYTApp;
 			sourceTree = "<group>";
@@ -198,6 +196,7 @@
 		2D10A96C2A0E6C03008EFC21 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2D10A91B2A0D11FD008EFC21 /* Info.plist */,
 				2D10A9652A0DB6D5008EFC21 /* SceneDelegate.swift */,
 				2D10A9672A0DB708008EFC21 /* AppDelegate.swift */,
 				2D10A9632A0DB6D0008EFC21 /* Assets.xcassets */,
@@ -208,6 +207,7 @@
 		2D10A9712A1284C6008EFC21 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2D10A9132A0D11FC008EFC21 /* FavoriteStory.xcdatamodeld */,
 				2D07D9B92A1705EC00C33E08 /* FavoriteManager.swift */,
 			);
 			path = Utils;
@@ -532,7 +532,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5357NHCGPZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NYTApp/Info.plist;
+				INFOPLIST_FILE = NYTApp/Sources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -560,7 +560,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5357NHCGPZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NYTApp/Info.plist;
+				INFOPLIST_FILE = NYTApp/Sources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
