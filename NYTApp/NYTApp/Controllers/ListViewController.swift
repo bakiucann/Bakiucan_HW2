@@ -26,10 +26,15 @@ class ListViewController: UIViewController {
         fetchData()
     }
 
-    private func setupNavigationBar() {
-        title = "Top Stories"
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
+  private func setupNavigationBar() {
+      let logo = UIImage(named: "NYTNav")
+      let imageView = UIImageView(image: logo)
+      imageView.contentMode = .scaleAspectFit
+      self.navigationItem.titleView = imageView
+// Disable large titles
+  }
+
+
 
     private func setupActivityIndicator() {
         activityIndicator = UIActivityIndicatorView(style: .large)

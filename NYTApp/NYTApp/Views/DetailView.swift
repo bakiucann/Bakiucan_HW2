@@ -11,8 +11,6 @@ class DetailView: UIView {
 
   private let viewModel: DetailViewModel
 
-
-
   private let scrollView: UIScrollView = {
     let scrollView = UIScrollView()
     scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -126,7 +124,7 @@ class DetailView: UIView {
           imageView.heightAnchor.constraint(equalToConstant: 250),
 
           favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-          favoriteButton.topAnchor.constraint(equalTo: stackView.topAnchor, constant: -28),
+          favoriteButton.topAnchor.constraint(equalTo: stackView.topAnchor, constant: -26),
           favoriteButton.widthAnchor.constraint(equalToConstant: 24),
           favoriteButton.heightAnchor.constraint(equalToConstant: 24),
 
