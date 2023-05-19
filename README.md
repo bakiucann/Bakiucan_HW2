@@ -42,6 +42,7 @@ The app implementation will be awarded bonus points for the following:
 - Clean code with proper organization and separation of concerns
 - Utilization of design patterns
 - Maintaining a clean and organized git history
+- SOLID Principles
 - Optional: Separate view code (View Code) for better modularity and testability
 
 ## Project Structure
