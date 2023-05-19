@@ -187,5 +187,3 @@ https://github.com/bakiucann/Bakiucan_HW2/assets/113190194/32e90af6-ced2-4dc3-b2
 ![Screenshots](https://github.com/bakiucann/Bakiucan_HW2/assets/113190194/220ee7e2-ae01-4dc0-82d2-9225410f5201)
 
 
-
-Please note that the paths to the simulator video and screenshots need to be updated with the actual file paths.
