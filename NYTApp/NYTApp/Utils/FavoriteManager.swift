@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class FavoriteManager {
-    static let shared = FavoriteManager()
+    static let shared = FavoriteManager()   // The shared instance of the FavoriteManager.
 
     private init() {}
 
@@ -18,6 +18,13 @@ class FavoriteManager {
         return appDelegate.persistentContainer
     }()
 
+    /// Adds a story to favorites.
+    ///
+    /// - Parameters:
+    ///   - title: The title of the story.
+    ///   - author: The author of the story.
+    ///   - thumbnailURL: The URL of the thumbnail image associated with the story.
+    ///   - storyURL: The URL of the full story.
     func addToFavorites(title: String, author: String, thumbnailURL: String, storyURL: String) {
         let context = persistentContainer.viewContext
         let favoriteStory = NSEntityDescription.insertNewObject(forEntityName: "FavoriteStory", into: context) as! FavoriteStory
@@ -34,6 +41,9 @@ class FavoriteManager {
         }
     }
 
+    /// Removes a story from favorites.
+    ///
+    /// - Parameter title: The title of the story to remove.
     func removeFromFavorites(title: String) {
         let context = persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<FavoriteStory> = FavoriteStory.fetchRequest()
@@ -50,6 +60,10 @@ class FavoriteManager {
         }
     }
 
+    /// Checks if a story is in favorites.
+    ///
+    /// - Parameter title: The title of the story to check.
+    /// - Returns: A boolean value indicating whether the story is in favorites or not.
     func isFavorite(title: String) -> Bool {
         let context = persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<FavoriteStory> = FavoriteStory.fetchRequest()
@@ -65,4 +79,3 @@ class FavoriteManager {
         return false
     }
 }
-

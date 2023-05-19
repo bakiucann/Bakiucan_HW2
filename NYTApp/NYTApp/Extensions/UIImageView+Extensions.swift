@@ -28,10 +28,13 @@ extension UIImageView {
         }
     }
 
-  func setImage(from url: URL?) {
-          self.sd_imageIndicator = SDWebImageActivityIndicator.gray
-          self.sd_setImage(with: url, placeholderImage: nil, options: .highPriority) { [weak self] (image, error, cacheType, imageURL) in
-              self?.sd_imageIndicator = nil
-          }
-      }
-  }
+    /// Sets the image of the image view from the specified URL.
+    ///
+    /// - Parameter url: The URL of the image.
+    func setImage(from url: URL?) {
+        self.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        self.sd_setImage(with: url, placeholderImage: nil, options: .highPriority) { [weak self] (image, error, cacheType, imageURL) in
+            self?.sd_imageIndicator = nil
+        }
+    }
+}
