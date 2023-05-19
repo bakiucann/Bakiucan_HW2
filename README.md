@@ -174,7 +174,14 @@ To use the app, follow these steps:
 The New York Times - Top Stories app provides an intuitive and user-friendly interface for browsing and reading top stories. The app follows Apple's Human Interface Guidelines and implements clean code with proper organization and separation of concerns. It utilizes the NYTimesAPI package to fetch data from the New York Times public API. The app aims to provide a seamless and enjoyable reading experience for users.
 
 Simulator Video and Screenshots:
-![Simulator Video](/path/to/simulator-video.mov)!
+
+
+https://github.com/bakiucann/Bakiucan_HW2/assets/113190194/7fcc3921-b56d-46db-b400-f9b9851708f7
+
+
+
+https://github.com/bakiucann/Bakiucan_HW2/assets/113190194/32e90af6-ced2-4dc3-b2e6-c3ebc54da7f2
+
 
 
 ![Screenshots](https://github.com/bakiucann/Bakiucan_HW2/assets/113190194/220ee7e2-ae01-4dc0-82d2-9225410f5201)
