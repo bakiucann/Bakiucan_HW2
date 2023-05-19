@@ -37,7 +37,7 @@ The app implementation will be awarded bonus points for the following:
 
 - Minimal use of external dependencies (only if necessary)
 - Avoidance of WKWebView usage
-- Implementation follows the MVC design pattern
+- Implementation follows the MVVM design pattern
 - Strong attention to quality and testing
 - Clean code with proper organization and separation of concerns
 - Utilization of design patterns
