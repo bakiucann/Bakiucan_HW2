@@ -92,6 +92,8 @@ class DetailView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
+  // MARK: - Setup Views
+
   private func setupViews() {
       addSubview(scrollView)
       scrollView.addSubview(stackView)
@@ -133,6 +135,7 @@ class DetailView: UIView {
       ])
   }
 
+  // MARK: - Configure View
 
   private func configure(with viewModel: DetailViewModel) {
     imageView.setImage(from: viewModel.largeImageURL)
@@ -142,6 +145,8 @@ class DetailView: UIView {
     updateFavoriteButton()
   }
 
+  // MARK: - Update Favorite Button
+
   private func updateFavoriteButton() {
     if let title = titleLabel.text {
       let isFavorite = FavoriteManager.shared.isFavorite(title: title)
@@ -149,6 +154,9 @@ class DetailView: UIView {
       favoriteButton.setImage(favoriteButtonImage, for: .normal)
     }
   }
+
+  // MARK: - Action Handlers
+
   @objc private func favoriteButtonTapped() {
       if let title = titleLabel.text {
           let isFavorite = FavoriteManager.shared.isFavorite(title: title)

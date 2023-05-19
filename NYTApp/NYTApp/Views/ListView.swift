@@ -8,7 +8,6 @@
 import UIKit
 
 class ListView: UIView {
-
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(ListCell.self, forCellReuseIdentifier: ListCell.reuseIdentifier)
@@ -27,6 +26,8 @@ class ListView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Setup
 
     private func setupTableView() {
         addSubview(tableView)
