@@ -27,19 +27,47 @@ class DetailViewController: UIViewController {
         view = detailView
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupNavigationBar()
-        setupSeeMoreButton()
-    }
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      setupNavigationBar()
+      setupSeeMoreButton()
+      updateFavoriteButton()
+  }
 
     private func setupNavigationBar() {
         title = viewModel.navigationTitle
     }
 
+  private func updateFavoriteButton() {
+      let isFavorite = FavoriteManager.shared.isFavorite(title: viewModel.title ?? "")
+      let favoriteButtonImage = isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+      detailView.favoriteButton.setImage(favoriteButtonImage, for: .normal)
+  }
+
+
     private func setupSeeMoreButton() {
         detailView.seeMoreButton.addTarget(self, action: #selector(seeMoreTapped), for: .touchUpInside)
+      detailView.favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped), for: .touchUpInside)
+
     }
+
+  var onFavoriteStatusChanged: (() -> Void)?
+
+  @objc private func favoriteButtonTapped() {
+    onFavoriteStatusChanged?()
+      let isFavorite = FavoriteManager.shared.isFavorite(title: viewModel.title ?? "")
+
+      if isFavorite {
+          FavoriteManager.shared.removeFromFavorites(title: viewModel.title ?? "")
+      } else {
+          FavoriteManager.shared.addToFavorites(title: viewModel.title ?? "",
+                                                author: viewModel.author ?? "",
+                                                thumbnailURL: viewModel.storyURL?.absoluteString ?? "",
+                                                storyURL: viewModel.storyURL?.absoluteString ?? "")
+      }
+
+      updateFavoriteButton()
+  }
 
     @objc private func seeMoreTapped() {
         guard let url = viewModel.storyURL else {

@@ -39,5 +39,3 @@ class ListView: UIView {
         ])
     }
 }
-
-

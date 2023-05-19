@@ -73,10 +73,12 @@ extension ListViewController: UITableViewDelegate {
       let storyViewModel = viewModel.storyViewModel(at: indexPath.row)
       let detailViewController = DetailViewController(storyViewModel: storyViewModel)
       navigationController?.pushViewController(detailViewController, animated: true)
+    detailViewController.onFavoriteStatusChanged = { [weak self] in
+      self?.listView.tableView.reloadData()
+    }
   }
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
       return UITableView.automaticDimension
   }
 }
-

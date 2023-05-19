@@ -38,7 +38,7 @@ class ListViewModel {
 }
 
 struct StoryViewModel {
-     let story: Story
+    let story: Story
 
     init(story: Story) {
         self.story = story
@@ -54,6 +54,13 @@ struct StoryViewModel {
 
     var thumbnailURL: URL? {
         if let urlString = story.thumbnailURL, let url = URL(string: urlString) {
+            return url
+        }
+        return nil
+    }
+
+    var storyURL: URL? {
+        if let urlString = story.url, let url = URL(string: urlString) {
             return url
         }
         return nil

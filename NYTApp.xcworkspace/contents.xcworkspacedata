@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FavoriteStory+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:FavoriteStory+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:NYTApp/NYTApp.xcodeproj">
    </FileRef>
 </Workspace>
