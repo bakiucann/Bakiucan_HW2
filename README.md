@@ -131,9 +131,7 @@ Here are some key implementation details for the project:
 ### Views/DetailView.swift
 - Represents the detail view for displaying detailed information about a selected story
 - Configures the view with data from the corresponding DetailViewModel
--
-
- Includes UI elements for displaying the large image, title, author, description, and a "See more" button
+- Includes UI elements for displaying the large image, title, author, description, and a "See more" button
 - Provides a favorite button for marking/unmarking a story as a favorite
 
 ### ViewModels/ListViewModel.swift
