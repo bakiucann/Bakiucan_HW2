@@ -20,8 +20,6 @@ class ListViewModel {
         self.nyTimesService = nyTimesService
     }
 
-    // MARK: - Fetching Top Stories
-
     func fetchTopStories(completion: @escaping (Result<Void, Error>) -> Void) {
         nyTimesService.fetchTopStories { [weak self] result in
             switch result {
@@ -33,8 +31,6 @@ class ListViewModel {
             }
         }
     }
-
-    // MARK: - Story View Model
 
     func storyViewModel(at index: Int) -> StoryViewModel {
         return StoryViewModel(story: stories[index])

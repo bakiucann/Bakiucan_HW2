@@ -15,8 +15,6 @@ class DetailViewModel {
         self.story = story
     }
 
-    // MARK: - Properties
-
     var navigationTitle: String {
         return "Story Detail"
     }
